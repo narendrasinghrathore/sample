@@ -25,12 +25,10 @@ const CreateAccount = React.memo(() => {
 
   const verifyPassword = (val) => {
     if (!val) return;
-    console.log(val === form.password);
     updatePasswordInvalid(val !== form.password);
   };
 
   const log = () => {
-    console.log(form);
     alert(JSON.stringify(form))
   };
 

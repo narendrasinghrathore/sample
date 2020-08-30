@@ -8,8 +8,7 @@ const Login = React.memo(() => {
   const [password, setPassword] = React.useState("");
 
   const log = () => {
-    console.log(email, password);
-    alert(JSON.stringify({email,password}))
+    alert(JSON.stringify({ email, password }));
   };
   return (
     <div className="login-form">
