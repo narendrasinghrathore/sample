@@ -1,10 +1,16 @@
 .App {
   text-align: center;
+  --font-size: calc(10px + 1.3vmin);
+  --form-control-width: calc(15em + 10vmin);
 }
 
 .App-logo {
   height: 40vmin;
   pointer-events: none;
+}
+
+.uppercase{
+  text-transform: uppercase;
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -14,13 +20,12 @@
 }
 
 .App-header {
-  background-color: #282c34;
   min-height: 100vh;
-  display: flex;
+  /* display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  justify-content: center; */
+  font-size: var(--font-size);
   color: white;
 }
 
@@ -34,5 +39,105 @@
   }
   to {
     transform: rotate(360deg);
+  }
+}
+
+.input-control {
+  width: 100%;
+  min-height: 100px;
+}
+
+input {
+  width: 100%;
+  border: none;
+  outline: none;
+  background-color: transparent;
+  border-bottom: 2px solid white;
+  color: white;
+  font-size: var(--font-size);
+}
+
+button {
+  width: calc(10em + 10vw);
+  outline: none;
+  height: 3em;
+  font-size: var(--font-size);
+  border: none;
+  border-radius: 3px;
+}
+
+button.primary {
+  background-color: rgb(72, 72, 185);
+  color: white;
+  text-transform: uppercase;
+}
+
+.login-form {
+  margin: auto;
+  width: 80vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+a {
+  color: white;
+  font-weight: bold;
+}
+
+
+
+.create-form-container {
+  margin: 40px auto;
+}
+.create-form {
+  width: 80vw;
+  margin: auto;
+  display: grid;
+  grid-gap: 1em;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.create-form div.grid-email {
+  grid-column: 1/3;
+  display: flex;
+  flex-direction: column;
+  
+}
+
+.create-form div.grid-email input[type="email"] {
+  width: 100%;
+}
+
+.create-form .input-control label {
+  display: block;
+  text-align: left;
+  color: #888;
+}
+.create-form .input-control label input[type="checkbox"] {
+  width: 30px;
+}
+.warning {
+  color: orange;
+  text-align: left;
+  font-size: 0.8em;
+}
+
+@media all and (max-width: 992px) {
+  .create-form {
+    width: 80vw;
+    margin: auto;
+    display: grid;
+    grid-gap: 1em;
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .create-form div.grid-email {
+    grid-column: 1/2;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    transition: width 2s; 
   }
 }
