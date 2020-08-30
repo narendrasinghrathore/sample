@@ -1,11 +1,17 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+/**
+ * Create account component
+ */
 const CreateAccount = React.memo(() => {
   /**
    * Confirm if password and confirm password are same.
    */
   const [passwordInvalid, updatePasswordInvalid] = useState(false);
 
+  /**
+   * Form state
+   */
   const [form, setForm] = useState({
     firstName: "",
     lastName: "",
@@ -23,11 +29,18 @@ const CreateAccount = React.memo(() => {
     setForm({ ...form, [name]: value });
   };
 
+  /**
+   * Verify password and confirm password matches
+   * @param {val} val 
+   */
   const verifyPassword = (val) => {
     if (!val) return;
     updatePasswordInvalid(val !== form.password);
   };
 
+  /**
+   * Log data in alert
+   */
   const log = () => {
     alert(JSON.stringify(form))
   };

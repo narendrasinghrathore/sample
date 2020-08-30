@@ -4,9 +4,18 @@ import { Link } from "react-router-dom";
  * Login Component
  */
 const Login = React.memo(() => {
+  /**
+   * Email
+   */
   const [email, setEmail] = React.useState("");
+  /**
+   * Password
+   */
   const [password, setPassword] = React.useState("");
 
+  /**
+   * Log data in alert
+   */
   const log = () => {
     alert(JSON.stringify({ email, password }));
   };
